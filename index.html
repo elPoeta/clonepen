@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/ace/src-noconflict/ace.js" defer></script>
     <script src="./js/ace/src-noconflict/ext-language_tools.js" defer></script>
@@ -14,8 +20,14 @@
   <body>
     <section class="navigation">
       <header>
-        <h1>CLON e-PEN</h1>
+        <h1>CLON e-PEN <span class="by">by @elPoeta</span></h1>
       </header>
+      <i class="fas fa-arrows-alt-v view" onclick="changeView();"></i>
+      <!-- <img
+        class="view"
+        onclick="changeView();"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAACowAAAqMBZNxfiQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOpSURBVFiF7dhNaBRnGAfw//vmY7NakxjYWDUxGmglBDzURk2UnvVQ7KEkUnRW1mCx2lYvOVQte1EPitHdUBS/aoppZimKoGAVD5IPc4hQaxEaSTQ0Znc2mP1q4+7Ox+Mhs2uWjNkNnVEP+z8s7M7sMz+e92OGAfLJJ585w6wqLHQHWgs4O2AvYsvnOk8lyC9lPOIF+PrnLyufWOXJiLPLX//DrRdaNK5SLul/9pIEUbplVItbASTOVtVWFLJFttzKb6gpAQPWGB0rNFWWKmovuNc/Gn+yoIh/VFoyG1lXWYTaiqL0dzb9YWixBHhxqyMmXB1r/P3vqc3gWAgApIER0NZUU1K7ZfUCKy77P0LEnKLU0d4TJkWflqpGNBqS0/PQ6ZOCRn+1pIMz43YTH/FJ5zassLt2ry8FZ4CiETx9Eax2FGNF+dwESxZJOkTsaV3Q01gzG/fQn/gnlxKWdTDduRq7a/e617jTfRE8GpePEGMhACey1bGkg2438ZE66VzjG3CXt1UeyrWW+UB9WJsMcA/9Cc/lFsfh+ZQzF0jEBFHyfLLctrdVx6kEnBmI4k9/wvtL85L9YIwAAAzBaFwDAETiGoggGZU0bw7quLVVJfv2NpWhQMf9dD+CwbG4t7N5yfdpHABVtt24Ozw1EleodnhSJkbspGkWQ1x3wHtmIEKqNr2vyapGx++FSBADHhAZPpTsvBYq3yEGPnd2+ests7ndxAUxcOHsDFwyjQsesezC7z3O2eWv3y5KX3x1JbzY8AR9WM/Oc1jNwfmkPT/enlQvDUap9TdpbBZSx3n7wqToOEUjOt0bth4HAEK3NBRLTN/Vf/0jRoIYdBnhUp1TVB3XHfCajTPcBxlH+QfF04cW2TgItBjQ55xPOr9xlX3fN41l4AyQNUJ7bxgPniePdm778NuZW4kZyXkfTN2+Nq20u3Y1lKZxp3oj+CsgH+1sqTxoJmxeQA6wFK61oRTsLeH0a2cPgb7LwKk6zp/o6Gx25Hzjtwy4aaW9OgPXp3fOgjmXU5w+KZh6FB8NyRmrtb3HmtX6pmSdg6lH8vSwSslxcP5c8E20QQyCGI0XI3nzQnP15DsBpiL9q6Kh2oaGatsyAMdSvwdiKu4MYch1feLTi1sdsbcDJMiEzPciVWWFqCozPv2/pPZxz7PkZwBumg00XCQEPH4wlsipQDSuYXhSIQXKU1NlegxbojG2x9sfPkXE6rIVYBwREOu40rL0sfm8fPLJJ2teARJRdkVUjwTRAAAAAElFTkSuQmCC"
+      />-->
     </section>
     <div class="container">
       <section class="editor-container">
@@ -27,7 +39,12 @@
         <div id="editorJs" class="editor"></div>
       </section>
       <section class="result-container">
-        <iframe srcdoc="" frameborder="0" id="codeResult"></iframe>
+        <iframe
+          srcdoc=""
+          frameborder="0"
+          id="codeResult"
+          class="result"
+        ></iframe>
       </section>
     </div>
   </body>

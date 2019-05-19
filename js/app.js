@@ -1,3 +1,4 @@
+const result = document.querySelector("#codeResult");
 ace.require("ace/ext/language_tools");
 
 window.editorHtml = ace.edit("editorHtml", {
@@ -8,14 +9,6 @@ window.editorHtml = ace.edit("editorHtml", {
 editorHtml.setTheme("ace/theme/monokai");
 
 editorHtml.setOption("mergeUndoDeltas", "always");
-
-editorHtml.setOptions({
-  autoScrollEditorIntoView: true,
-  enableBasicAutocompletion: true,
-  enableSnippets: true,
-  enableLiveAutocompletion: true,
-  fontSize: "100%"
-});
 
 editorHtml.getSession().on("change", function() {
   compile();
@@ -58,15 +51,34 @@ editorJs.setOptions({
   enableLiveAutocompletion: true,
   fontSize: "100%"
 });
+editorHtml.setOptions({
+  autoScrollEditorIntoView: true,
+  enableBasicAutocompletion: true,
+  enableSnippets: true,
+  enableLiveAutocompletion: true,
+  fontSize: "100%"
+});
 
 editorJs.getSession().on("change", function() {
   compile();
 });
 
 const compile = () => {
-  const result = document.querySelector("#codeResult");
-
   result.srcdoc = `${editorHtml.getValue()}
                   <style>${editorCss.getValue()}</style>
                   <script>${editorJs.getValue()}</script>`;
 };
+
+function changeView() {
+  document.querySelectorAll(".ace_editor").forEach(e => {
+    e.classList.toggle("hidden");
+  });
+  document.querySelectorAll(".vertical-text").forEach(e => {
+    e.style.display === "none"
+      ? (e.style.display = "block")
+      : (e.style.display = "none");
+  });
+  document.querySelector(".editor-container").classList.toggle("hidden");
+
+  document.querySelector("#codeResult").classList.toggle("fullResult");
+}
