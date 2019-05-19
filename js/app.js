@@ -1,4 +1,5 @@
 const result = document.querySelector("#codeResult");
+const btnChangeview = document.querySelector("#btn-changeView");
 ace.require("ace/ext/language_tools");
 
 window.editorHtml = ace.edit("editorHtml", {
@@ -70,7 +71,7 @@ const compile = () => {
                   <script>${editorJs.getValue()}</script>`;
 };
 
-function changeView() {
+const changeView = () => {
   document.querySelectorAll(".ace_editor").forEach(e => {
     e.classList.toggle("hidden");
   });
@@ -83,3 +84,5 @@ function changeView() {
 
   document.querySelector("#codeResult").classList.toggle("fullResult");
 }
+
+btnChangeview.addEventListener('click', changeView);
