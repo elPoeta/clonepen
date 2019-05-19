@@ -15,11 +15,10 @@ body {
   height: 60px;
   background: #444;
   color: #fff;
-  margin-bottom: 10px;
   align-items: center;
 }
 h1 {
-  font-size: 2em;
+  font-size: 1.3em;
   margin-left: 10px;
 }
 .by {
@@ -51,15 +50,15 @@ h1 {
   color: #fff;
 }
 .vertical-text:nth-of-type(1) {
-  height: 80px;
+  height: 130px;
   transition: height 0.3s;
 }
 .vertical-text:nth-of-type(2) {
-  height: 50px;
+  height: 100px;
   transition: height 0.3s;
 }
 .vertical-text:nth-of-type(3) {
-  height: 35px;
+  height: 75px;
   transition: height 0.3s;
 }
 .editor {

@@ -10,7 +10,15 @@ editorHtml.setTheme("ace/theme/monokai");
 
 editorHtml.setOption("mergeUndoDeltas", "always");
 
-editorHtml.getSession().on("change", function() {
+editorHtml.setOptions({
+  autoScrollEditorIntoView: true,
+  enableBasicAutocompletion: true,
+  enableSnippets: true,
+  enableLiveAutocompletion: true,
+  fontSize: "100%"
+});
+
+editorHtml.getSession().on("change", function () {
   compile();
 });
 
@@ -31,7 +39,7 @@ editorCss.setOptions({
   fontSize: "100%"
 });
 
-editorCss.getSession().on("change", function() {
+editorCss.getSession().on("change", function () {
   compile();
 });
 
@@ -51,15 +59,8 @@ editorJs.setOptions({
   enableLiveAutocompletion: true,
   fontSize: "100%"
 });
-editorHtml.setOptions({
-  autoScrollEditorIntoView: true,
-  enableBasicAutocompletion: true,
-  enableSnippets: true,
-  enableLiveAutocompletion: true,
-  fontSize: "100%"
-});
 
-editorJs.getSession().on("change", function() {
+editorJs.getSession().on("change", function () {
   compile();
 });
 
