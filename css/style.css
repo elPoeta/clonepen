@@ -73,6 +73,7 @@ h1 {
   width: 100%;
   z-index: 110;
   transition: height 0.3s;
+  overflow: hidden;
 }
 .result {
   height: 40vh;
